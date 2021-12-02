@@ -17,6 +17,11 @@ module.exports = {
                 use: [
                     {
                         loader: 'awesome-typescript-loader',
+                        options: {
+                            // 构建缓存
+                            useCache: true,
+                            cacheDirectory: path.join(__dirname, './..','.cache-loader')
+                        }
                     }
                 ]
             },
