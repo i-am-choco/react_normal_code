@@ -1,69 +1,28 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TsconfigPathPlugin = require('tsconfig-paths-webpack-plugin')
-const path = require('path')
+const plugins = require('./plugins')
+const { resolve } = require('./utils')
+const jsRules = require('./rules/jsRules')
+const styleRules = require('./rules/styleRules')
 
 module.exports = {
     entry: {
-        app: path.join(__dirname, './../', 'src/app.tsx'),
+        app: resolve('src/app.tsx'),
     },
     output: {
-        path: path.join(__dirname, './../', 'dist'),
+        path: resolve('dist'),
         filename: '[name].js'
     },
     module: {
-        rules: [
-            {
-                test: /\.ts(x?)$/,
-                use: [
-                    {
-                        loader: 'awesome-typescript-loader',
-                        options: {
-                            // 构建缓存
-                            useCache: true,
-                            cacheDirectory: path.join(__dirname, './..','.cache-loader')
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.less$/,
-                include: [path.join(__dirname, './../','src')],
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'typings-for-css-modules-loader',
-                        options: {
-                            // 是否使用css modules
-                            modules: true,
-                            // 类名导出
-                            namedExport: true,
-                            // 支持驼峰
-                            camelCase: true,
-                            // 使用less
-                            less: true
-                        }
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            includePaths: [path.join(__dirname, './../','src/styles')],
-                        }
-                    }
-                ]
-            }
-        ]
+        rules: [...jsRules, ...styleRules],
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         plugins: [
             new TsconfigPathPlugin({
-                configFile: path.join(__dirname, './../', 'tsconfig.json')
+                configFile: resolve('tsconfig.json')
             })
         ]
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: 'build/tpl/index.html'
-        })
-    ]
+    plugins: [...plugins]
+
 }
