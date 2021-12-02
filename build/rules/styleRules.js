@@ -1,10 +1,12 @@
 const { resolve } = require('./../utils')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = [
     {
         test: /\.less$/,
         include: [resolve('src')],
         use: [
-            'style-loader',
+            // css写入单独文件中，不写入js
+            MiniCssExtractPlugin.loader,
             {
                 loader: 'typings-for-css-modules-loader',
                 options: {

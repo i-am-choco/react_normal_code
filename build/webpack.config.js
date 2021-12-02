@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         path: resolve('dist'),
-        filename: '[name].js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [...jsRules, ...styleRules],
