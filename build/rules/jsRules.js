@@ -1,26 +1,22 @@
-const tsImportPluginFactory = require('ts-import-plugin');
-const { resolve } = require('./../utils')
 module.exports = [
     {
         test: /\.ts(x?)$/,
         use: [
             {
-                loader: 'awesome-typescript-loader',
+                loader: 'babel-loader',
                 options: {
-                    // 构建缓存
-                    useCache: true,
-                    cacheDirectory: resolve('.cache-loader'),
-                    getCustomTransformers: () => ({
-                        before: [
-                            tsImportPluginFactory({
-                                libraryaName: 'antd',
-                                libraryaDirectory: 'lib',
-                                style: true
-                            })
-                        ]
-                    })
+                    cacheDirectory: true,
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                        '@babel/preset-typescript'
+                    ],
+                    plugins: [
+                        ['import', { libraryName: 'antd', libraryDirectory: 'lib', style: 'true' }],
+                    ],
                 }
             }
+
         ]
     }
 ]
