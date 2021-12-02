@@ -37,7 +37,12 @@ module.exports = {
                             less: true
                         }
                     },
-                    'less-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            includePaths: [path.join(__dirname, './../','src/styles')],
+                        }
+                    }
                 ]
             }
         ]
