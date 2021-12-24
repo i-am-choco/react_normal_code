@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@svgr/webpack": "^6.1.2",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "antd": "^4.17.2",
@@ -29,11 +30,17 @@
     "mini-css-extract-plugin": "^2.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^6.2.1",
     "style-loader": "^3.3.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/react-loadable": "^5.5.6"
   }
 }

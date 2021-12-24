@@ -1,9 +1,9 @@
-import { Test } from '@components/test';
+import App from '@share/App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 const render = () => {
     ReactDOM.render(
-        <Test />,
+        <App />,
         document.querySelector('#app')
     )
 }

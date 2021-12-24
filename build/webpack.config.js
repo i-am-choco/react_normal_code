@@ -3,6 +3,7 @@ const plugins = require('./plugins')
 const { resolve } = require('./utils')
 const jsRules = require('./rules/jsRules')
 const styleRules = require('./rules/styleRules')
+const fileRules = require('./rules/fileRules')
 
 module.exports = {
     entry: {
@@ -13,7 +14,7 @@ module.exports = {
         filename: 'js/[name].js'
     },
     module: {
-        rules: [...jsRules, ...styleRules],
+        rules: [...jsRules, ...styleRules, ...fileRules],
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
