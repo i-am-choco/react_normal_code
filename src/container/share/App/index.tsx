@@ -18,6 +18,10 @@ function Loading() {
 //     loading: Loading,
 //     render: () => <div>Page</div>
 // });
+/** 
+ * @author: Lusia
+ * @description: 现有问题，不适用于动态加载，react-loadable@5.5.0 有其他写法变化，需考虑降版本处理
+ */
 class App extends React.Component {
     render() {
         return (
