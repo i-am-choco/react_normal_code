@@ -3,7 +3,7 @@ import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import React from 'react';
 import Loadable from 'react-loadable';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Router, Routes } from 'react-router-dom';
 function Loading() {
     return <div>Loading...</div>;
 }
@@ -25,12 +25,12 @@ function Loading() {
 class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route path="page" element={<Page />}></Route>
+                    <Route path="/Home" element={<Home />}></Route>
+                    <Route path="/Page" element={<Page />}></Route>
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 }
