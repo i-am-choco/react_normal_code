@@ -4,6 +4,7 @@ const { resolve } = require('./utils')
 const jsRules = require('./rules/jsRules')
 const styleRules = require('./rules/styleRules')
 const fileRules = require('./rules/fileRules')
+const optimization = require('./optimization')
 
 module.exports = {
     entry: {
@@ -24,6 +25,6 @@ module.exports = {
             })
         ]
     },
-    plugins: [...plugins]
-
+    plugins: [...plugins],
+    optimization
 }
