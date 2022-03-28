@@ -45,7 +45,8 @@
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
+    "webpack-dev-server": "^4.6.0",
+    "webpackbar": "^5.0.2"
   },
   "devDependencies": {
     "@types/react-loadable": "^5.5.6"
