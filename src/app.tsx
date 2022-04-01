@@ -1,8 +1,9 @@
+import App from '@share/App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 const render = () => {
     ReactDOM.render(
-        <div>12345</div>,
+        <App />,
         document.querySelector('#app')
     )
 }
