@@ -26,5 +26,9 @@ module.exports = {
         ]
     },
     plugins: [...plugins],
-    optimization
+    optimization,
+    devServer: {
+        host: 'localhost',
+        port: 8080,
+    },
 }

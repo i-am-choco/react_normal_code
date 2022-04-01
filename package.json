@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config build/webpack.config.js --mode development",
+    "dev": "webpack-dev-server --config build/webpack.config.js --mode development --stats errors-warnings",
     "build": "webpack --config build/webpack.config.js"
   },
   "keywords": [],
@@ -45,10 +45,10 @@
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0",
     "webpackbar": "^5.0.2"
   },
   "devDependencies": {
-    "@types/react-loadable": "^5.5.6"
+    "@types/react-loadable": "^5.5.6",
+    "webpack-dev-server": "^4.7.4"
   }
 }
