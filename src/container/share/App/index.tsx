@@ -1,4 +1,5 @@
 
+import { DemoMap } from '@views/demoMap';
 import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import React from 'react';
@@ -29,6 +30,7 @@ class App extends React.Component {
                 <Routes>
                     <Route path="/Home" element={<Home />}></Route>
                     <Route path="/Page" element={<Page />}></Route>
+                    <Route path="/demoMap" element={<DemoMap />}></Route>
                 </Routes>
             </HashRouter>
         )
