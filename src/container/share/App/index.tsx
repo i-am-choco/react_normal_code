@@ -2,9 +2,10 @@
 import { DemoMap } from '@views/demoMap';
 import { Home } from '@views/Home';
 import { Page } from '@views/Page';
+import { Pointmark } from '@views/Point';
 import React from 'react';
 import Loadable from 'react-loadable';
-import { BrowserRouter, HashRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter,Route, Routes } from 'react-router-dom';
 function Loading() {
     return <div>Loading...</div>;
 }
@@ -26,13 +27,14 @@ function Loading() {
 class App extends React.Component {
     render() {
         return (
-            <HashRouter>
+            <Router>
                 <Routes>
-                    <Route path="/Home" element={<Home />}></Route>
+                    <Route path="/Home" element={<Home />}></Route>{/** 主页 */}
                     <Route path="/Page" element={<Page />}></Route>
-                    <Route path="/demoMap" element={<DemoMap />}></Route>
+                    <Route path="/demoMap" element={<DemoMap />}></Route>{/** 地图demo */}
+                    <Route path="/pointMark" element={<Pointmark />}></Route>{/** 位置标注 */}
                 </Routes>
-            </HashRouter>
+            </Router>
         )
     }
 }

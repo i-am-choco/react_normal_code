@@ -5,12 +5,10 @@ import React from 'react'
 import { SearchOutlined } from '@ant-design/icons'
 
 interface IState {
-    center: string | BMapGL.Point
     keyWord: string
 }
 export class Home extends ComponentExt<{}, IState> {
     state: IState = {
-        center: new BMapGL.Point(116.404449, 39.914889),
         keyWord: '',
     }
     render() {
@@ -25,7 +23,6 @@ export class Home extends ComponentExt<{}, IState> {
                         placeholder="请输入目标地点"
                         value={this.state.keyWord}
                         onChange={(v: string) => {
-                            console.log(v)
                             this.setState({ keyWord: v })
                         }}
                     ></AutoSearchBar>
