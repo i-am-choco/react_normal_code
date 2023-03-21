@@ -39,6 +39,7 @@
     "react-loadable": "^5.5.0",
     "react-router-dom": "^6.2.1",
     "style-loader": "^3.3.1",
+    "three": "^0.150.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^5.64.4",
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@types/bmapgl": "0.0.5",
     "@types/react-loadable": "^5.5.6",
+    "@types/three": "^0.149.0",
     "css-loader": "^1.0.1",
     "less": "^4.1.2",
     "less-loader": "^4.1.0",
