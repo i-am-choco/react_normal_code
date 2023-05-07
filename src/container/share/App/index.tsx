@@ -2,6 +2,7 @@
 import { DemoMap } from '@views/demoMap';
 import { Home } from '@views/Home';
 import { Page } from '@views/Page';
+import { Geometry } from '@views/Page/geometry';
 import { Pointmark } from '@views/Point';
 import React from 'react';
 import Loadable from 'react-loadable';
@@ -30,9 +31,13 @@ class App extends React.Component {
             <Router>
                 <Routes>
                     <Route path="/Home" element={<Home />}></Route>{/** 主页 */}
-                    <Route path="/Page" element={<Page />}></Route>
                     <Route path="/demoMap" element={<DemoMap />}></Route>{/** 地图demo */}
                     <Route path="/pointMark" element={<Pointmark />}></Route>{/** 位置标注 */}
+
+                     {/* three学习 */}
+                    <Route path="/baic" element={<Page />}></Route>
+                    <Route path="/geometry" element={<Geometry />}></Route>
+
                 </Routes>
             </Router>
         )
