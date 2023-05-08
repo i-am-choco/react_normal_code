@@ -4,6 +4,7 @@ import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import { DBGUI } from '@views/Page/dbGui';
 import { Geometry } from '@views/Page/geometry';
+import { Texture } from '@views/Page/texture';
 import { Pointmark } from '@views/Point';
 import React from 'react';
 import Loadable from 'react-loadable';
@@ -32,13 +33,14 @@ class App extends React.Component {
             <Router>
                 <Routes>
                     <Route path="/Home" element={<Home />}></Route>{/** 主页 */}
-                    <Route path="/demoMap" element={<DemoMap />}></Route>{/** 地图demo */}
+                    <Route path="/demoMap" element={ <DemoMap />}></Route>{/** 地图demo */}
                     <Route path="/pointMark" element={<Pointmark />}></Route>{/** 位置标注 */}
 
                      {/* three学习 */}
                     <Route path="/baic" element={<Page />}></Route> {/** 基础使用、自适应全屏 */}
                     <Route path="/geometry" element={<Geometry />}></Route>{/** 缓存几何体 */}
                     <Route path="/dbGUI" element={<DBGUI />}></Route> {/** 调试ui工具 */}
+                    <Route path="/texture" element={<Texture />}></Route>{/** 纹理 */}
 
                 </Routes>
             </Router>
