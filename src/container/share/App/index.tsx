@@ -4,6 +4,7 @@ import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import { DBGUI } from '@views/Page/dbGui';
 import { Geometry } from '@views/Page/geometry';
+import { Material } from '@views/Page/material';
 import { Texture } from '@views/Page/texture';
 import { Pointmark } from '@views/Point';
 import React from 'react';
@@ -41,7 +42,7 @@ class App extends React.Component {
                     <Route path="/geometry" element={<Geometry />}></Route>{/** 缓存几何体 */}
                     <Route path="/dbGUI" element={<DBGUI />}></Route> {/** 调试ui工具 */}
                     <Route path="/texture" element={<Texture />}></Route>{/** 纹理 */}
-
+                    <Route path="/material" element={<Material />}></Route>{/** 材质 */}
                 </Routes>
             </Router>
         )
