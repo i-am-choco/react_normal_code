@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackBar = require('webpackbar');
+const path = require('path')
+
 // const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const { resolveAssetsRootDir } = require('./utils');
 const { message } = require('antd');
@@ -16,6 +19,12 @@ module.exports = [
             collapseWhitespace: true,
             removeAttributeQuotes: true
         }
+    }),
+    // 指定某个文件夹内容复制一份到dist目录下
+    new CopyWebpackPlugin({
+        patterns: [
+            { from: path.resolve(__dirname, '../static')  },
+        ]
     }),
     // 分离css与js
     new MiniCssExtractPlugin({

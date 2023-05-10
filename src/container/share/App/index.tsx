@@ -6,6 +6,7 @@ import { DBGUI } from '@views/Page/dbGui';
 import { Geometry } from '@views/Page/geometry';
 import { Material } from '@views/Page/material';
 import { Texture } from '@views/Page/texture';
+import { ThreeText } from '@views/Page/threeText';
 import { Pointmark } from '@views/Point';
 import React from 'react';
 import Loadable from 'react-loadable';
@@ -43,6 +44,7 @@ class App extends React.Component {
                     <Route path="/dbGUI" element={<DBGUI />}></Route> {/** 调试ui工具 */}
                     <Route path="/texture" element={<Texture />}></Route>{/** 纹理 */}
                     <Route path="/material" element={<Material />}></Route>{/** 材质 */}
+                    <Route path="/3DText" element={<ThreeText />}></Route>{/** 3D文字 */}
                 </Routes>
             </Router>
         )

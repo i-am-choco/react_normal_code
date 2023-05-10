@@ -13,7 +13,7 @@ import doorHeight from '../../assets/texture/door/height.jpg';
 import doorMetalness from '../../assets/texture/door/metalness.jpg';
 import doorNormal from '../../assets/texture/door/normal.jpg';
 import doorRoughness from '../../assets/texture/door/roughness.jpg';
-import matcap1 from '../../assets/texture/matcaps/1.png';
+// import matcap1 from '../../assets/texture/matcaps/1.png';
 import gradients3 from '../../assets/texture/gradients/3.jpg';
 
 import e1 from '../../assets/texture/environmentMaps/0/nx.jpg';
@@ -45,7 +45,7 @@ export const Material = () => {
     const doorMetalnessTexture = texture.load(doorMetalness);
     const doorNormalTexture = texture.load(doorNormal);
     const doorRoughnessTexture = texture.load(doorRoughness);
-    const matcap1Texture = texture.load(matcap1);
+    const matcap1Texture = texture.load('/textur/matcaps/1.png');
     const gradients3Texture = texture.load(gradients3); 
     const environmentTexture = cubeTexture.load([
         e4,e1,e5,e2,e6,e3,
