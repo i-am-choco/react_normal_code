@@ -4,6 +4,7 @@ import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import { DBGUI } from '@views/Page/dbGui';
 import { Geometry } from '@views/Page/geometry';
+import { Lights } from '@views/Page/lights';
 import { Material } from '@views/Page/material';
 import { Texture } from '@views/Page/texture';
 import { ThreeText } from '@views/Page/threeText';
@@ -45,6 +46,7 @@ class App extends React.Component {
                     <Route path="/texture" element={<Texture />}></Route>{/** 纹理 */}
                     <Route path="/material" element={<Material />}></Route>{/** 材质 */}
                     <Route path="/3DText" element={<ThreeText />}></Route>{/** 3D文字 */}
+                    <Route path="/lights" element={<Lights />}></Route>{/** 灯光的使用 */}
                 </Routes>
             </Router>
         )
