@@ -7,6 +7,7 @@ import { Geometry } from '@views/Page/geometry';
 import { House } from '@views/Page/house';
 import { Lights } from '@views/Page/lights';
 import { Material } from '@views/Page/material';
+import { Particle } from '@views/Page/particle';
 import { Shadows } from '@views/Page/shadow';
 import { Texture } from '@views/Page/texture';
 import { ThreeText } from '@views/Page/threeText';
@@ -51,6 +52,7 @@ class App extends React.Component {
                     <Route path="/lights" element={<Lights />}></Route>{/** 灯光的使用 */}
                     <Route path="/shadows" element={<Shadows />}></Route>{/** 阴影 */}
                     <Route path="/hauntedHouse" element={<House />}></Route>{/** 鬼屋 */}
+                    <Route path="/particle" element={<Particle />}></Route>{/** 粒子 */}
                 </Routes>
             </Router>
         )
