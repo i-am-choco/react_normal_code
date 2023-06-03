@@ -14,7 +14,7 @@ import { ThreeText } from '@views/Page/threeText';
 import { Pointmark } from '@views/Point';
 import React from 'react';
 import Loadable from 'react-loadable';
-import { BrowserRouter as Router, HashRouter,Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 function Loading() {
     return <div>Loading...</div>;
 }
@@ -36,8 +36,9 @@ function Loading() {
 class App extends React.Component {
     render() {
         return (
-            <Router>
+            <HashRouter >
                 <Routes>
+                    <Route path="/" element={<Page />}></Route>
                     <Route path="/Home" element={<Home />}></Route>{/** 主页 */}
                     <Route path="/demoMap" element={ <DemoMap />}></Route>{/** 地图demo */}
                     <Route path="/pointMark" element={<Pointmark />}></Route>{/** 位置标注 */}
@@ -54,7 +55,7 @@ class App extends React.Component {
                     <Route path="/hauntedHouse" element={<House />}></Route>{/** 鬼屋 */}
                     <Route path="/particle" element={<Particle />}></Route>{/** 粒子 */}
                 </Routes>
-            </Router>
+            </HashRouter>
         )
     }
 }
