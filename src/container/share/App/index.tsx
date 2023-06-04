@@ -3,6 +3,7 @@ import { DemoMap } from '@views/demoMap';
 import { Home } from '@views/Home';
 import { Page } from '@views/Page';
 import { DBGUI } from '@views/Page/dbGui';
+import { Galaxy } from '@views/Page/galaxy';
 import { Geometry } from '@views/Page/geometry';
 import { House } from '@views/Page/house';
 import { Lights } from '@views/Page/lights';
@@ -54,6 +55,7 @@ class App extends React.Component {
                     <Route path="/shadows" element={<Shadows />}></Route>{/** 阴影 */}
                     <Route path="/hauntedHouse" element={<House />}></Route>{/** 鬼屋 */}
                     <Route path="/particle" element={<Particle />}></Route>{/** 粒子 */}
+                    <Route path="/Galaxy" element={<Galaxy />}></Route>{/** 星系 */}
                 </Routes>
             </HashRouter>
         )
