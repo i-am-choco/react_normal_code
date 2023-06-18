@@ -1,10 +1,24 @@
-import App from '@share/App';
-import React from 'react';
-import ReactDOM from 'react-dom';
-const render = () => {
-    ReactDOM.render(
-        <App />,
-        document.querySelector('#app')
-    )
+import React from 'react'
+import './app.less'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import { HomeManage } from './three/containers/home'
+
+interface ILink {
+    type: string
+    rel: string
+    url: string
+    href: string
 }
-render();
+
+export default class App extends React.Component {
+    render() {
+        return (
+            <HashRouter basename='/three'>
+                <Routes>
+                    {/* 工作台 */}
+                    <Route path="/" element={<HomeManage />} />
+                </Routes>
+            </HashRouter>
+        )
+    }
+}

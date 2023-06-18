@@ -8,7 +8,7 @@ const optimization = require('./optimization')
 
 module.exports = {
     entry: {
-        app: resolve('src/app.tsx'),
+        app: resolve('src/index.tsx'),
     },
     output: {
         path: resolve('dist'),
