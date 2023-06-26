@@ -1,6 +1,6 @@
 import React from 'react'
 import './app.less'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes, BrowserRouter } from 'react-router-dom'
 import { HomeManage } from './three/containers/home'
 
 interface ILink {
@@ -13,12 +13,12 @@ interface ILink {
 export default class App extends React.Component {
     render() {
         return (
-            <HashRouter basename='/three'>
+            <BrowserRouter>
                 <Routes>
                     {/* 工作台 */}
                     <Route path="/" element={<HomeManage />} />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         )
     }
 }
