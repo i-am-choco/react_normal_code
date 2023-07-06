@@ -3,10 +3,20 @@ import { MenuProps } from 'antd'
 import { Breadcrumb, Layout, Menu } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './index.less'
+import store, { AppDispatch, RootState } from 'store'
+import { UPDATE_CURRENT_IFRAME } from 'store/actionType'
+import { updateCurrentIframe, updateCurrentIframeUrl } from 'store/action'
+import { connect } from 'react-redux'
+import { IHomePageManagerState } from 'store/homePageManager'
 
 const { Header, Content, Footer, Sider } = Layout
 
-type MenuItem = Required<MenuProps>['items'][number] & { url: string }
+export type MenuItem = Required<MenuProps>['items'][number] & { url: string }
+
+interface IHomePageManagerProps extends IHomePageManagerState {
+    updateCurrentIframe: (key: string) => void
+    updateCurrentIframeUrl: (key: string) => void
+}
 
 function getItem(
     label: React.ReactNode,
@@ -29,36 +39,37 @@ function getUrl(str: string): string {
     return `${origin}${str}`
 }
 
-const items: MenuItem[] = [
-    getItem('Homepage', '0', getUrl('/demo')),
-]
+const items: MenuItem[] = [getItem('Homepage', '0', getUrl('/demo')), getItem('More', '1', getUrl('/demo'))]
 
-export const HomeManage: React.FC = () => {
-    const [curMenu, setCurMenu] = useState('0')
-    const [curUrl, setCurUrl] = useState<string>(items[0]['url'])
-
-    useEffect(() => {
-        console.log()
-    }, [])
-
+const HomeManage: React.FC<IHomePageManagerProps> = ({
+    currentUrl,
+    currentKey,
+    updateCurrentIframe,
+    updateCurrentIframeUrl,
+}) => {
     return (
         <Layout style={{ minHeight: '100vh' }}>
-            <Header style={{background: '#fff', marginBottom: 13}}>
+            <Header style={{ background: '#fff', marginBottom: 13 }}>
                 <h1 className="homepage-logo">Choco Leong</h1>
                 <Menu
-                    selectedKeys={[curMenu]}
+                    selectedKeys={[currentKey]}
                     mode="horizontal"
                     items={items}
                     onSelect={(info) => {
-                        setCurMenu(info.key)
-                        setCurUrl(items[Number(info.key)]['url'])
+                        updateCurrentIframeUrl(items[Number(info.key)]['url'])
+                        updateCurrentIframe(info.key)
                     }}
                 />
             </Header>
             <Content style={{ margin: '0 16px' }}>
-                <iframe style={{ width: '100%', height: '100%', border: 'none' }} src={curUrl}></iframe>
+                <iframe style={{ width: '100%', height: '100%', border: 'none' }} src={currentUrl}></iframe>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
     )
 }
+
+export default connect((state: RootState) => ({ ...state.homePageManager }), {
+    updateCurrentIframe,
+    updateCurrentIframeUrl,
+})(HomeManage)
