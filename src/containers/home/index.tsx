@@ -1,15 +1,14 @@
-import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons'
 import { MenuProps } from 'antd'
-import { Breadcrumb, Layout, Menu } from 'antd'
-import React, { useEffect, useState } from 'react'
+import { Layout, Menu } from 'antd'
+import React from 'react'
 import './index.less'
-import store, { AppDispatch, RootState } from 'store'
-import { UPDATE_CURRENT_IFRAME } from 'store/actionType'
+import { RootState } from 'store'
 import { updateCurrentIframe, updateCurrentIframeUrl } from 'store/action'
 import { connect } from 'react-redux'
 import { IHomePageManagerState } from 'store/homePageManager'
+import menuData from './menu.json'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Header, Content, Footer } = Layout
 
 export type MenuItem = Required<MenuProps>['items'][number] & { url: string }
 
@@ -18,28 +17,14 @@ interface IHomePageManagerProps extends IHomePageManagerState {
     updateCurrentIframeUrl: (key: string) => void
 }
 
-function getItem(
-    label: React.ReactNode,
-    key: React.Key,
-    url: string,
-    icon?: React.ReactNode,
-    children?: MenuItem[]
-): MenuItem {
-    return {
-        key,
-        icon,
-        children,
-        label,
-        url,
-    } as MenuItem
-}
-
 function getUrl(str: string): string {
     const origin = window.location.origin
     return `${origin}${str}`
 }
 
-const items: MenuItem[] = [getItem('Homepage', '0', getUrl('/demo')), getItem('More', '1', getUrl('/demo'))]
+const items: MenuItem[] = menuData?.menuList?.map(i => {
+    return {...i, url: getUrl(i.path)}
+})
 
 const HomeManage: React.FC<IHomePageManagerProps> = ({
     currentUrl,
@@ -64,7 +49,7 @@ const HomeManage: React.FC<IHomePageManagerProps> = ({
             <Content style={{ margin: '0 16px' }}>
                 <iframe style={{ width: '100%', height: '100%', border: 'none' }} src={currentUrl}></iframe>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            <Footer style={{ textAlign: 'center' }}>Choco Leong ©2023 Created by Choco </Footer>
         </Layout>
     )
 }

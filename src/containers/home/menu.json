@@ -1,0 +1,40 @@
+{
+    "menuList": [
+        {
+            "key": "0",
+            "label": "Homepage",
+            "path": "/demo",
+            "icon": ""
+        },
+        {
+            "key": "1",
+            "label": "More",
+            "path": "/demo",
+            "icon": ""
+        },
+        {
+            "key": "5",
+            "label": "More",
+            "path": "/demo",
+            "icon": ""
+        },
+        {
+            "key": "2",
+            "label": "More",
+            "path": "/demo",
+            "icon": ""
+        },
+        {
+            "key": "3",
+            "label": "More",
+            "path": "/demo",
+            "icon": ""
+        },
+        {
+            "key": "4",
+            "label": "More",
+            "path": "/demo",
+            "icon": ""
+        }
+    ]
+}
