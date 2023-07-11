@@ -33,10 +33,11 @@ const HomeManage: React.FC<IHomePageManagerProps> = ({
     updateCurrentIframeUrl,
 }) => {
     return (
-        <Layout style={{ minHeight: '100vh' }}>
-            <Header style={{ background: '#fff', marginBottom: 13 }}>
+        <Layout style={{ minHeight: '100vh', backgroundColor: '#000'}}>
+            <Header style={{marginBottom: 13 }}>
                 <h1 className="homepage-logo">Choco Leong</h1>
                 <Menu
+                    theme="dark"
                     selectedKeys={[currentKey]}
                     mode="horizontal"
                     items={items}
@@ -46,10 +47,10 @@ const HomeManage: React.FC<IHomePageManagerProps> = ({
                     }}
                 />
             </Header>
-            <Content style={{ margin: '0 16px' }}>
+            <Content style={{ margin: '0', height:'calc(100vh - 150px)' }}>
                 <iframe style={{ width: '100%', height: '100%', border: 'none' }} src={currentUrl}></iframe>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Choco Leong ©2023 Created by Choco </Footer>
+            <Footer  style={{ textAlign: 'center', backgroundColor: '#001529', color: 'white' }}>Choco Leong ©2023 Created by Choco </Footer>
         </Layout>
     )
 }

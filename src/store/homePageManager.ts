@@ -9,7 +9,7 @@ export interface IHomePageManagerState {
 
 export const homePageManagerInitState = {
     currentKey: '0',
-    currentUrl: 'http://localhost:8080/demo'
+    currentUrl: 'http://localhost:8080/homePage'
 }
 
 export interface IHomePageManagerAction {

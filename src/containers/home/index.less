@@ -4,16 +4,15 @@
     }
     .homepage-logo{
         float: left;
-        &::after{
-            content: " ";
-            position: absolute;
-            top: 16px;
-            margin-left: 10px;
-            height: 32px;
-            width: 1px;
-            background-color: #cccccc;
-            display: inline;
-            vertical-align: middle;
-        }
+        color: #fff;
+    }
+    .ant-menu.ant-menu-dark .ant-menu-item-selected{
+        background-color: transparent !important;
+    }
+    .ant-menu-dark .ant-menu-item-selected::after{
+        border-bottom: 2px solid hotpink;
+    }
+    .ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover{
+        background-color:  transparent !important;
     }
 }
